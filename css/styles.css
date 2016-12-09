@@ -29,7 +29,7 @@ section {
     background: white;
     margin: 1em;
     padding: 1.5em;
-    border-radius: 15%;
+    border-radius: 13%;
     
 /* Flexbox as Child */
     flex-grow: .5;
