@@ -29,6 +29,7 @@ section {
     background: white;
     margin: 1em;
     padding: 1.5em;
+    border-radius: 15%;
     
 /* Flexbox as Child */
     flex-grow: .5;
@@ -40,21 +41,21 @@ section {
 }
 
 h2 {
-    color: #80d4ff;
+    color: skyblue;
     font-family: "Montserrat", sans-serif;
     font-size: 3em;
     text-align: center;
 }
 
 h1, h3 {
-    color: grey;
+    color: dimgray;
     font-family: "Montserrat", sans-serif;
     font-size: 1.5em;
     text-align: center;
 }
 
 button {
-    color: #80d4ff; 
+    color: darkslategray; 
 }
 
 
@@ -69,7 +70,7 @@ MEDIA QUERIES
   
   /* Diagnostic Styling. */
   body {
-       background: slatewhite;
+       background: ;
   }
 
 }
@@ -83,7 +84,7 @@ MEDIA QUERIES
 
   /* Diagnostic Styling. */
   body {
-       background: slatewhite;
+       background: ;
   }
 
 }
@@ -97,7 +98,7 @@ MEDIA QUERIES
 
   /* Diagnostic Styling. */
 	body {
-       background: slatewhite;
+       background: ;
 	}
 	
 }
