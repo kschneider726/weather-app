@@ -1,84 +1,43 @@
 // My Scripts
 
 //Spokane
-$.simpleWeather({
+$(document).ready(function() {
+  $.simpleWeather({
     location: '99208',
     unit: 'f',
     success: function(weather) {
+      html = '<h1>'+weather.temp+'&deg;'+weather.units.temp+'</h1>';
+      html += '<h3>'+weather.city+', '+weather.region+'</h3>';
+      html += '<h3 class="currently">'+weather.currently+'</h3>';
       
-      // Display Data
-      $('.spokane .temp').text(weather.temp);
-      $('.spokane .city').text(weather.city);
-      $('.spokane img').attr('src', weather.image);
-      $('.spokane .title').text(weather.title);
-        
-      // If this condition, show this icon
-        if ( 26 >= weather.code && 30 <= weather.code ) {
-            
-        $('.spokane .wi').addClass('wi-day-cloudy');
-            
-        }
   
-      
-      // Entire weather object
-      console.log(weather);
+      $(".spokane").html(html);
     },
     error: function(error) {
-      // Show if weather cannot be retreived
-        $('body').append('<p> Cannot Connect. Look out a window! :) </p>');
+      $("#weather").html('<p>'+error+'</p>');
     }
-  
   });
+});
+
 
 //Beaverton
-$.simpleWeather({
+$(document).ready(function() {
+  $.simpleWeather({
     location: '97007',
     unit: 'f',
     success: function(weather) {
+      html = '<h1>'+weather.temp+'&deg;'+weather.units.temp+'</h1>';
+      html += '<h3>'+weather.city+', '+weather.region+'</h3>';
+      html += '<h3 class="currently">'+weather.currently+'</h3>';
       
-      // Display Data
-      $('.beaverton .temp').text(weather.temp);
-      $('.beaverton .city').text(weather.city);
-      $('.beaverton img').attr('src', weather.image);
-      $('.beaverton .title').text(weather.title);
   
-      
-      // Entire weather object
-      console.log(weather);
+      $(".beaverton").html(html);
     },
     error: function(error) {
-      // Show if weather cannot be retreived
-        $('body').append('<p> Cannot Connect. Look out a window! :) </p>');
+      $("#weather").html('<p>'+error+'</p>');
     }
-  
   });
-
-//Vienna, Austria
-$.simpleWeather({
-    location: 'Vienna, Austria',
-    unit: 'f',
-    success: function(weather) {
-      
-      // Display Data
-      $('.vienna .temp').text(weather.temp);
-      $('.vienna .city').text(weather.city);
-      $('.vienna img').attr('src', weather.image);
-      $('.vienna .title').text(weather.title);
-  
-      
-      // Entire weather object
-      console.log(weather);
-    },
-    error: function(error) {
-      // Show if weather cannot be retreived
-        $('body').append('<p> Cannot Connect. Look out a window! :) </p>');
-    }
-  
-  });
-
-
-
-
+});
 
 
 // Get and store Geo Location lat/long coordinates
@@ -99,15 +58,12 @@ var getWeather = function(location) {
     
    $.simpleWeather({
     location: location,
-    woeid: '',
     unit: 'f',
     success: function(weather) {
       
       // Display Data
-            // Display Data
       $('.geo .temp').text(weather.temp);
       $('.geo .city').text(weather.city);
-      $('.geo img').attr('src', weather.image);
       $('.geo .title').text(weather.title);
         
       // Entire weather object
